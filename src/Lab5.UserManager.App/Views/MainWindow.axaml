@@ -1,0 +1,33 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Lab5.UserManager.App.ViewModels"
+        x:Class="Lab5.UserManager.App.Views.MainWindow"
+        Width="600"
+        Height="500"
+        Title="User Manager"
+        x:DataType="vm:MainWindowViewModel">
+
+    <StackPanel Margin="20" Spacing="10">
+
+        <TextBox Watermark="First Name"
+                 Text="{Binding FirstName}" />
+
+        <TextBox Watermark="Last Name"
+                 Text="{Binding LastName}" />
+
+        <TextBox Watermark="Email"
+                 Text="{Binding Email}" />
+
+        <Button Content="Add User"
+                HorizontalAlignment="Left"
+                Click="OnAddUserClicked" />
+
+        <TextBlock Text="Users:"
+                   FontWeight="Bold"
+                   Margin="0,10,0,0"/>
+
+        <ListBox Items="{Binding Users}"
+                 Height="250"/>
+
+    </StackPanel>
+</Window>
