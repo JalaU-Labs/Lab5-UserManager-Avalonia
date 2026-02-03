@@ -26,8 +26,7 @@
                    FontWeight="Bold"
                    Margin="0,10,0,0"/>
 
-        <ListBox Items="{Binding Users}"
+        <ListBox ItemsSource="{Binding Users}"
                  Height="250"/>
-
     </StackPanel>
 </Window>
