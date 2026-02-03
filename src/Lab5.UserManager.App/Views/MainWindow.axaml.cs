@@ -10,12 +10,4 @@ public partial class MainWindow : Window
         InitializeComponent();
         DataContext = new MainWindowViewModel();
     }
-
-    private void OnAddUserClicked(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
-    {
-        if (DataContext is MainWindowViewModel vm)
-        {
-            vm.AddUser();
-        }
-    }
 }

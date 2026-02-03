@@ -3,12 +3,13 @@
         xmlns:vm="clr-namespace:Lab5.UserManager.App.ViewModels"
         x:Class="Lab5.UserManager.App.Views.MainWindow"
         Width="600"
-        Height="500"
+        Height="700"
         Title="User Manager"
         x:DataType="vm:MainWindowViewModel">
 
     <StackPanel Margin="20" Spacing="10">
 
+        <!-- Input Fields -->
         <TextBox Watermark="First Name"
                  Text="{Binding FirstName}" />
 
@@ -20,20 +21,39 @@
 
         <Button Content="Add User"
                 HorizontalAlignment="Left"
-                Click="OnAddUserClicked" />
+                Command="{Binding AddUserCommand}" />
 
+        <!-- Search and Sort -->
+        <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
+            <TextBox Watermark="Search by Email"
+                     Text="{Binding SearchText}"
+                     Width="200"/>
+            <Button Content="Search"
+                    Command="{Binding SearchUserCommand}"/>
+            <Button Content="Sort Asc"
+                    Command="{Binding SortAscendingCommand}"/>
+            <Button Content="Sort Desc"
+                    Command="{Binding SortDescendingCommand}"/>
+        </StackPanel>
+
+        <!-- User List -->
         <TextBlock Text="Users:"
                    FontWeight="Bold"
                    Margin="0,10,0,0"/>
 
         <ListBox ItemsSource="{Binding Users}"
-                 Height="250"/>
+                 Height="200"/>
         
+        <TextBlock Text="{Binding UserCountSummary}"
+                   FontWeight="Bold"/>
+        
+        <!-- Notifications -->
         <TextBlock Text="{Binding NotificationMessage}"
                    Margin="0,10,0,0"
                    FontStyle="Italic"
-                   Foreground="LightGreen"/>
+                   Foreground="Green"/>
         
+        <!-- Error Handling -->
         <Button Content="Show Errors"
                 Command="{Binding ShowErrorsCommand}"
                 Margin="0,10,0,0"/>
