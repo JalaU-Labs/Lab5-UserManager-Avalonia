@@ -28,5 +28,9 @@
 
         <ListBox ItemsSource="{Binding Users}"
                  Height="250"/>
+        <TextBlock Text="{Binding NotificationMessage}"
+                   Margin="0,10,0,0"
+                   FontStyle="Italic"
+                   Foreground="LightGreen"/>
     </StackPanel>
 </Window>

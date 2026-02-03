@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using Lab5.UserManager.App.Models;
+using Lab5.UserManager.App.Services;
 
 namespace Lab5.UserManager.App.ViewModels;
 
@@ -11,6 +12,8 @@ public sealed class MainWindowViewModel : ViewModelBase
     private string _firstName = string.Empty;
     private string _lastName = string.Empty;
     private string _email = string.Empty;
+    private readonly NotificationService _notificationService;
+    private string _notificationMessage = string.Empty;
 
     public string FirstName
     {
@@ -57,5 +60,15 @@ public sealed class MainWindowViewModel : ViewModelBase
         FirstName = string.Empty;
         LastName = string.Empty;
         Email = string.Empty;
+    }
+    
+    public string NotificationMessage
+    {
+        get => _notificationMessage;
+        private set
+        {
+            _notificationMessage = value;
+            OnPropertyChanged();
+        }
     }
 }
