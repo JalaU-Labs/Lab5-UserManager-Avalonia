@@ -1,6 +1,4 @@
-using Xunit;
 using Lab5.UserManager.App.Services;
-using System.Collections.Generic;
 
 namespace Lab5.UserManager.Tests.Services;
 

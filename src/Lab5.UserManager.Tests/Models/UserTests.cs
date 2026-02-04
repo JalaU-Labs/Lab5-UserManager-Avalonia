@@ -1,4 +1,3 @@
-using Xunit;
 using Lab5.UserManager.App.Models;
 
 namespace Lab5.UserManager.Tests.Models;

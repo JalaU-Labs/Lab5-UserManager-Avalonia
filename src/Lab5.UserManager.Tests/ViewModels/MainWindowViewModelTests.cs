@@ -1,6 +1,4 @@
-using Xunit;
 using Lab5.UserManager.App.ViewModels;
-using System.Linq;
 
 namespace Lab5.UserManager.Tests.ViewModels;
 
